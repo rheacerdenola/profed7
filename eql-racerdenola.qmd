@@ -1,0 +1,308 @@
+---
+title: "Exploring Quarto and Latex"
+author: "RHEAMAE A. CERDEÑOLA"
+format: pdf
+editor: visual
+---
+
+4.1. ANTIDIFFERENTIATION AND INDEFINITE INTEGRALS
+
+## 4.1.2 Integration by Substitution
+
+### Theorem 4.1.11 (Substitution Rule)
+
+::: {#thm-sub_rule}
+If $u= g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is continues on $I$, then
+
+$$
+\int f(g(x))\cdot g'(x)dx=\int f(u)du.
+$$
+:::
+
+::: {#exm-sub_rule}
+*Example 4.1.12.*
+
+1.  $\int(1-4x)^\frac{1}{2}dx$
+
+    If we let $u = 1-4x$, then $du=-4dx$. We multiply the integrand by $\frac{-4}{-4}$.Thus, $$ \int(1-4 x)^{1 / 2} d x=\int(1-4 x)^{1 / 2} \cdot \frac{-4}{-4} d x=\int u^{1 / 2}\left(-\frac{d u}{4}\right)=-\frac{1}{4} \int u^{1 / 2} d u=-\frac{1}{4} \cdot \frac{2 u^{3 / 2}}{3}+C.$$
+
+    We put the final answer in terms of x by substituting $u=1-4 x.$ Therefore, $$
+    \int(1-4 x)^{1 / 2} d x=\frac{(1-4 x)^{3 / 2}}{6}+C .$$
+
+2.  $\int x^2\left(x^3-1\right)^{10} dx$
+
+    Let $u=x^{3}-1.$ Then $d u=3 x^{2} d x$ or $\frac{d u}{3}=x^{2} d x.$ By substitution, $$\int x^{2}\left(x^{3}-1\right)^{10} d x=\frac{d u}{3}=\frac{1}{3} \int u^{10} d u=\frac{u^{11}}{33}+C=\frac{\left(x^{3}-1\right)^{11}}{33}+C$$
+
+3.  $\int \frac{x}{\left(x^{2}+1\right)^{3}} d x$
+
+    Let $u=x^{2}+1.$ Then $d u=2 x d x,$ or $\frac{d u}{2}=x d x.$ By substitution, $$\frac{x}{\left(x^{2}+1\right)^{3}} d x=\frac{1}{2} \int u^{-3} d u=\frac{1}{2} \cdot \frac{u^{-2}}{-2}+C=-\frac{1}{4\left(x^{2}+1\right)^{2}}+C.$$
+
+4.  $\int \cos ^{4} x \sin x d x$ Let $u=\cos x.$ Then $du=-\sin x d x,$ or $-du=\sin x d x.$ By substitution, $$\int \cos ^{4} x \sin x d x=-\int u^{4} d u=-\frac{u^{5}}{5}+C=-\frac{\cos ^{5} x}{5}+C.$$
+
+5.  $\int x \sec ^{3}\left(x^{2}\right) \tan \left(x^{2}\right) d x$
+
+    Let $u=\sec \left(x^{2}\right).$ Then $du=\sec \left(x^{2}\right) \tan \left(x^{2}\right) \cdot 2xdx,$ or $\frac{d u}{2}=\sec \left(x^{2}\right) \tan \left(x^{2}\right) \cdot x d x.$ By substitution, $$\begin{aligned}
+    \int x\sec^3 \left(x^2\right)\tan\left(x^2\right)dx &= \int \sec^2 \left(x^2\right)\sec\left(x^2\right)\tan\left(x^2\right)\cdot xdx \\ &= \int u^2du=\frac{1}{2}\cdot \frac{u^3}{3}+C \\& = \frac{\sec^3 \left(x^2\right)}{6} + C.
+    \end{aligned}$$
+
+6.  $\int \frac{\tan \frac{1}{s}+\tan \frac{1}{s} \sin \frac{1}{s}}{s^{2} \cos \frac{1}{s}} d s$\
+    Let $u=\frac{1}{s}.$Then $d u=-\frac{1}{s} d s$ or $-d u=\frac{d s}{s}.$ By substitutuion, $$\begin{aligned}
+    \int \frac{\tan \frac{1}{s}+\tan \frac{1}{s} \sin \frac{1}{s}}{s^{2} \cos \frac{1}{s}} d s & =-\int \frac{\tan u+\tan u \sin u}{\cos u} d u \\
+    & =-\int\left(\sec u \tan u+\tan ^{2} u\right) d u \\
+    & =-\int\left(\sec u \tan u+\sec ^{2} u-1\right) d u \\
+    & =-(\sec u+\tan u-u)+C \\
+    & =-\sec \frac{1}{s}-\tan \frac{1}{s}+\frac{1}{s}+C
+    \end{aligned}
+    $$
+
+7.  $\int t \sqrt{t-1} d t$\
+    Let $u=t-1$ .\$ Then $u=dt.$ Also, $t=u+1.$ By substitution, $$\begin{aligned}
+    \int t \sqrt{t-1} d t & =\int(u+1) u^{1 / 2} d u=\int\left(u^{3 / 2}+u^{1 / 2}\right) d u=\frac{2 u^{5 / 2}}{5}+\frac{2 u^{3 / 2}}{3}+C \\
+    & =\frac{2(t-1)^{5 / 2}}{5}+\frac{2(t-1)^{3 / 2}}{3}+C .
+    \end{aligned}$$
+
+8.  $\int \frac{t^{3}}{\sqrt{t^{2}+3}} dt$\
+    Let $( u=t^{2}+3.$ Then $d u=2 t dt,$ or $\frac{d u}{2}=t dt.$ Also, \$ t\^{2}=u-3.\$ By substitution, $$\begin{aligned}
+    \int \frac{t^{3}}{\sqrt{t^{2}+3}} d t & =\int \frac{t^{2} \cdot t}{\sqrt{t^{2}+3}} d t=\int u^{-1 / 2}(u-3) \frac{d u}{2} \\
+    & =\frac{1}{2} \int\left(u^{1 / 2}-3 u^{-1 / 2}\right) d u=\frac{1}{2}\left(\frac{2 u^{3 / 2}}{3}-6 u^{1 / 2}\right)+C \\
+    & =\frac{\left(t^{2}+3\right)^{3 / 2}}{3}-3\left(t^{2}+3\right)^{1 / 2}+C
+    \end{aligned}$$
+
+9.  $\int \sqrt{4+\sqrt{x}} d x$ Let $u=4+\sqrt{x}.$ Then $d u=\frac{1}{2 \sqrt{x}} d x$ or $2 d u=\frac{d x}{\sqrt{x}}.$ By substitution, $\begin{aligned} \int \sqrt{4+\sqrt{x}} d x & =\int \sqrt{4+\sqrt{x}} \cdot \frac{\sqrt{x}}{\sqrt{x}} d x \\ & =\int \sqrt{4+\sqrt{x}} \cdot \sqrt{x} \cdot \frac{d x}{\sqrt{x}} \quad(\sqrt{x}=u-4) \\ & =\int u^{1 / 2} \cdot(u-4) \cdot 2 d u \\ & =\int\left(2 u^{3 / 2}-8 u^{1 / 2}\right) d u \\ & =\frac{2 \cdot 2 u^{5 / 2}}{5}-\frac{2 \cdot 8 u^{3 / 2}}{3}+C \\ & =\frac{4(4+\sqrt{x})^{5 / 2}}{5}-\frac{16(4+\sqrt{x})^{3 / 2}}{3}+C . \end{aligned}$
+:::
+
+*4.1.3 Particular Antiderivatives*
+
+Now suppose that given a function $f(x)$, we wish to find a particular antiderivatives $F(x)$ of $f(x)$ that satisfies a given condition. Such a condition is called an initia*l or* boundary condition.
+
+CHAPTER 5. NEW CLASSES OF FUNCTIONS AND L'HOSPITAL'S RULE
+
+*5.6 Intermediate Forms and L'Hopital's Rule*
+
+5.6.1 Intermediate Forms of Type $\frac{0}{0}$ and $\frac{\infty}{\infty}$ We began this course with the concept of the limit: the behavior of a function as the independent variable approaches a certain value, or as it increases or decreases without bound. We saw tangent lines, rates of change, and areas of plane regions, as limits of certain quantities. Indeed, the concept of the limit is the central idea about which the entire calculus revolves.
+
+Now, we conclude this course by revisiting this fundamental idea. We shall see that, with the aid of derivatives, certain limits can be evaluated more conveniently. Before proceeding, we first recall some terminology defined in the early part of this course. We also recall here some techniques in evaluating limits we have previously encountered.
+
+*Definition 5.6.1* The $\lim _{x \rightarrow a} \frac{f(x)}{g(x)}$ is an indeterminate form of type
+
+1\. $\frac{0}{0}$ if $\displaystyle\lim_{x \to a} f(x) = \displaystyle\lim_{x \to a} g(x)=0$
+
+2\. $\frac{\infty}{\infty}$ if $\displaystyle\lim_{x \to a} f(x)$ and $\displaystyle\lim_{x \to a} g(x)$ are both $+\infty$ or $-\infty$.
+
+Of course, $"x \to a"$ may be replaced by $"x \to a^+"$, $"x \to a^-"$, $"x \to +\infty"$ or $"x \to -\infty"$.
+
+*Example 5.6.2* Evaluate the following limits.
+
+1\. $\displaystyle\lim_{x \to 0} \frac{x^2-3x}{2x^2+x}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \displaystyle\lim_{x \to 0} \frac{x^2-3x}{2x^2+x}= \displaystyle\lim_{x \to 0} \frac{x(x-3)}{x(2x+1)}=\displaystyle\lim_{x \to 0} \frac{x-3}{2x+1}=-3
+    $$ 2. $\displaystyle\lim_{x \to 0} \frac{\sin5x}{\sin3x}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \displaystyle\lim_{x \to 0} \frac{\sin5x}{\sin3x}=\displaystyle\lim_{x \to 0} \left(\frac{\sin5x}{5x}\right)\left(\frac{3x}{\sin3x}\right)\left(\frac{5}{3}\right)=1\cdot1\cdot\frac{5}{3}=\frac{5}{3}
+    $$ 3. $\displaystyle\lim_{x \to 2} \frac{x^2+3x-10}{x^2-4x+4}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \begin{aligned}
+    \displaystyle\lim_{x \to 2} \frac{x^2+3x-10}{x^2-4x+4}&=\displaystyle\lim_{x \to 2}\frac{(x+5)(x-2)}{(x-2)^2}\\&=\displaystyle\lim_{x \to 2}\frac{x+5}{x-2}\\&=-\infty
+    \end{aligned}
+    $$ 4. $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{7-6x}$ $\left(\frac{+\infty}{-\infty}\right)$
+
+*Solution*. $$
+    \displaystyle\lim_{x \to +\infty}\frac{3x-1}{7-6x}=\displaystyle\lim_{x \to +\infty}\frac{3x-1}{7-6x}\cdot \frac{\frac{1}{x}}{\frac{1}{x}}=\displaystyle\lim_{x \to +\infty}\frac{3-\frac{1}{x}}{\frac{7}{x}-6}=-\frac{1}{2}
+    $$
+
+5.6.2 L'Hospital's Rule The following theorem tells us how derivatives can be used to evaluate limits that are indeterminate of type $\frac{0}{0}$ or $\frac{\infty}{\infty}$. It usually referred to as L'Hospital's Rule, after the French mathematician Guillaume Francois Marquis de L'Hospital.
+
+Let $f$ and $g$ be functions differentiable on an open interval $I$ containing $a$ except possibly at $a$ and $g'(x)\ne 0$ for all $x \in I \setminus {a}$. If $\displaystyle\lim_{x \to a}\frac{f(x)}{g(x)}$ is indeterminate of type $\frac{0}{0}$ or $\frac{\infty}{\infty}$, then $$
+\displaystyle\lim_{x \to a}\frac{f(x)}{g(x)}=\displaystyle\lim_{x \to a}\frac{f'(x)}{g'(x)}
+$$ provided $\displaystyle\lim_{x \to a}\frac{f'(x)}{g'(x)}$ exists or $\displaystyle\lim_{x \to a}\frac{f'(x)}{g'(x)}=\pm \infty$.
+
+Remarks L'Hospital's Rule, with suitable modifications, is valid if $"x \to a"$ is replaced by $"x \to a^+"$, $"x \to a^-"$, $"x \to +\infty"$ or $"x \to -\infty"$.
+
+Example Evaluate the following limits.
+
+1.  $\displaystyle\lim_{x \to 0} \frac{x^2-3x}{2x^2+x}$ $\frac{0}{0}$
+
+*Solution.* $$
+\displaystyle\lim_{x \to 0} \frac{x^2-3x}{2x^2+x}=\displaystyle\lim_{x \to 0} \frac{D_x\left(x^2-3x\right)}{D_y\left(2x^2+x\right)}=\displaystyle\lim_{x \to 0} \frac{2x-3}{4x+1}=-3
+$$
+
+2.  $\displaystyle\lim_{x \to 0} \frac{\sin5x}{\sin3x}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \displaystyle\lim_{x \to 0} \frac{\sin5x}{\sin3x}=\displaystyle\lim_{x \to 0} \frac{5\cos5x}{3\cos3x}=\frac{5}{3}
+    $$
+
+3.  $\displaystyle\lim_{x \to 2^-} \frac{x^2+3x-10}{x^2-4x+4}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \begin{aligned}
+    \displaystyle\lim_{x \to 2^-} \frac{x^2+3x-10}{x^2-4x+4}&=\displaystyle\lim_{x \to 2^-}\frac{2x+3}{2x-4}\\&\\&=-\infty
+    \end{aligned}
+    $$
+
+4.  $\displaystyle\lim_{x \to +\infty}\frac{3x-1}{7-6x}$ $\left(\frac{+\infty}{-\infty}\right)$
+
+*Solution.* $$
+    \displaystyle\lim_{x \to +\infty}\frac{3x-1}{7-6x}=\displaystyle\lim_{x \to +\infty} \frac{3}{-6}=-\frac{1}{2}
+    $$
+
+5.  $\displaystyle\lim_{x \to 1} \frac{x^3-3x+2}{1-x+\ln x}$ $\left(\frac{0}{0}\right)$
+
+*Solution.* $$
+    \begin{aligned}
+    \displaystyle\lim_{x \to 1} \frac{x^3-3x+2}{1-x+\ln x}&=\displaystyle\lim_{x \to 1}\frac{3x^2-3}{-1+\frac{1}{x}}\\&=\displaystyle\lim_{x \to 1}\frac{6x}{-\frac{1}{x^2}}\\&=-6
+    \end{aligned}
+    $$
+
+6.  $\displaystyle\lim_{x \to 0^-}\frac{\csc x}{1-\cot x}$ $\left(\frac{-\infty}{+\infty}\right)$
+
+*Solution.* $$
+    \begin{aligned}
+    \displaystyle\lim_{x \to 0^-}\frac{\csc x}{1-\cot x}&=\displaystyle\lim_{x \to 0^-}\frac{-\csc x \cot x}{\csc^2 x}\\&=\displaystyle\lim_{x \to 0^-}\frac{-\cot x}{\csc x}\\&=\displaystyle\lim_{x \to 0^-} \frac{\csc^2 x}{-\csc x \cot x}\\&=\displaystyle\lim_{x \to 0^-}\frac{\csc x}{-\cot x}\\&=\displaystyle\lim_{x \to 0^-}\frac{-\cot x}{\csc x}
+    \end{aligned}
+    $$
+
+Observe that the expression in the last line above is exactly the same as the expression in the second line. Hence, continued application of L'Hospital's Rule here will just lead to an infinite string of equations and will not help us evaluate the limit. This example should make you realize that L'Hospital's Rule is not always helpful. Sometimes, we just have to use some old-fashioned tricks. For instance, we evaluate this limit by simply manipulating the given expression to obtain a simpler expression:
+
+$$
+\begin{aligned}
+\displaystyle\lim_{x \to 0^-}\frac{\csc x}{1-\cot x}&=\displaystyle\lim_{x \to 0^-}\frac{\frac{1}{\sin x}}{1-\frac{\cos x}{\sin x}}\\&=\displaystyle\lim_{x \to 0^-}\frac{1}{\sin x-\cos x}\\&=-1
+\end{aligned}
+$$
+
+It is imperative to remember the behavior of each function introduced in this course; doing so will help us in computing new limits. Recalling the graphs of our new functions will be helpful in remembering their behavior. For instance, using the graph of $f(x)=\log_a x$, where \$ 0\< a \< 1\$, one sees that $\displaystyle\lim_{x \to 0^+}\log_a x=+\infty$. Thus if $f(x)$ approaches $0$ through positive values $x$ approaches $k$, then $$
+\displaystyle\lim_{x \to k}\log_a[f(x)]=\displaystyle\lim_{y \to 0^+}\log_a y=+\infty.
+$$
+
+Solution
+
+Note that since $x+\sin x \ge x - 1$ for any $x \in R$ and $\displaystyle\lim_{x \to +\infty} {x-1=+\infty}$, then $\displaystyle\lim_{x \to +\infty}{x + \sin x = +\infty}$ as well. Thus, the limit is indeterminate of type $\left(\frac{\infty}{\infty}\right)$.
+
+However, $\displaystyle\lim_{x \to +\infty}{\frac{D_x(x+\sin x)}{D_x(x)}=\displaystyle\lim_{x \to +\infty}\frac{1+\cos x}{1}}$ does not exist $\cos x$ does not approach any particular value as $x\to +\infty$. Neither does $1+\cos x$ grow without bound. Thus, L'Hospital's Rule does not apply.
+
+We therefore need to employ other techniques. In particular, notice that any $x> 0$, the following hold:
+
+$$
+\begin{aligned}
+x-1 & \le x+\sin x \le x+1 \\
+\Leftrightarrow\frac{x-1}{x} & \le x+\sin x \le \frac {x+1}{x}\\
+\end{aligned}
+$$
+
+Also, $\displaystyle\lim_{x\to+\infty}{\frac{x-1}{x}=1=\displaystyle\lim_{x\to+\infty}{\frac{x+1}{x}}}$, so by the Squeeze Theorem, $\displaystyle\lim_{x\to+\infty}{\frac{x+\sin x}{x}=1}$.
+
+Indeterminate Forms of Type $0\cdot \infty$ and $\infty -\infty$
+
+Definition
+
+The $\displaystyle\lim_{x\to a}{f(x)g(x)}$ is an indeterminate form of type $0\cdot \infty$ if either $$
+\displaystyle\lim_{x\to a}{f(x)=0}$$ and $\displaystyle\lim_{x\to a}{g(x)=+\infty}$ or $-\infty$, or
+
+$$
+\displaystyle\lim_{x\to a}{f(x)=+\infty}
+$$ or $-\infty$ and $\displaystyle\lim_{x\to a}{g(x)=0}$.
+
+The $\displaystyle\lim_{x\to a}{f(x)g(x)}$ is an indeterminate form of type $\infty - \infty$ if either
+
+$$
+\displaystyle\lim_{x\to a}{f(x)=+\infty}
+$$ and $\displaystyle\lim_{x\to a}{g(x)=+\infty}$ or $-\infty$, or
+
+$$
+\displaystyle\lim_{x\to a}{f(x)=-\infty}
+$$ and $\displaystyle\lim_{x\to a}{g(x)=+\infty}$.
+
+Remark L'Hospital's Rule works only for indeterminate forms of type $\frac{0}{0}$ and $\frac{\infty}{\infty}$. Any other indeterminate form must be expressed equivalently in one of these two forms if we wish to apply L'Hospital's Rule. For the new indeterminate forms described above, these conversions can be performed as described below.
+
+If $\displaystyle\lim_{x\to a}{f(x)=0}$ and $\displaystyle\lim_{x\to a}{g(x)=+\infty}$ or $-\infty$, write $\displaystyle\lim_{x\to a}{f(x)g(x)}$ as:
+
+$\displaystyle\lim_{x\to a}{\frac{f(x)}{\frac{1}{g(x)}}}$, which is indeterminate of type $\frac{0}{0}$, or
+
+$\displaystyle\lim_{x\to a}{\frac{g(x)}{\frac{1}{f(x)}}}$, which is indeterminate of type $\frac{\infty}{\infty}$ and apply L'Hospital's Rule
+
+If $\displaystyle\lim_{x\to a}{f(x)+g(x)}$ is indeterminate of type $\infty - \infty$, rewrite $f(x)+g(x)$ as a single expression to obtain an indeterminate form of type $\frac{0}{0}$ or $\frac{\infty}{\infty}$ and apply L'Hospital's Rule.
+
+Example Evaluate the following limits.
+
+$\displaystyle\lim_{x\to 0^+}{\sin^{-1} (2x) \csc x}$ $(0\cdot +\infty)$
+
+Solution
+
+$$
+\begin{aligned}
+\displaystyle\lim_{x\to 0^+}{\sin^{-1} (2x) \csc x} &=\displaystyle\lim_{x\to 0^+}{\frac{\sin^{-1} (2x)}{\sin x}}\\&=\displaystyle\lim_{x\to 0^+}{\frac{1}{\sqrt{1-4x^2}}}\cdot (2) \\&=\frac{2}{1}\\&=2
+\end{aligned}
+$$ 2. $\displaystyle\lim_{0\to \frac{\pi}{2}^-}{\tan \theta \ln (\sin \theta)}$ $+\infty \cdot 0$
+
+*Solution*
+
+$$
+\begin{aligned}
+\displaystyle\lim_{\theta\to \frac{\pi}{2}^-}{\tan \theta \ln (\sin \theta)}&=\displaystyle\lim_{\theta \to \frac{\pi}{2}^-}{\frac {\ln (\sin \theta)}{\cot \theta}}\\&=\displaystyle\lim_{\theta\to \frac{\pi}{2}^-}{\frac{\left(\frac {1}{\sin \theta}\right)\cos \theta}{-\csc^2 \theta}}\\&=\displaystyle\lim_{\theta\to \frac{\pi}{2}^-}{-\sin \theta\cos \theta}\\&=-1(0)\\&=0
+\end{aligned}
+$$ 3. $\displaystyle\lim_{x\to 1^+}{\left(\frac{x}{x-1}-\frac{1}{\ln x}\right)}$ $\left(\frac{1}{0^+}-\frac{1}{0^+}\right)$
+
+*Solution*
+
+$$
+\begin{aligned}
+\displaystyle\lim_{x\to 1^+}{\left(\frac{x}{x-1}-\frac{1}{\ln x}\right)}&=\displaystyle\lim_{x\to 1^+}{\frac{x\ln x -(x-1)}{(x-1)\ln x}}\\&=\displaystyle\lim_{x\to 1^+}{\frac{x\cdot \frac{1}{x}+\ln x-1}{(x-1)\cdot \frac{1}{x}+\ln x}}\\&=\displaystyle\lim_{x\to 1^+}{\frac{\frac{1}{x}}{\frac{1}{x^2}+\frac{1}{x}}}\\&=\frac{1}{2}
+\end{aligned}
+$$
+
+Indeterminate Forms of Type
+
+Indeterminate Forms of Type $1^\infty$, $0^\infty$ and $\infty ^0$
+
+Definition Let $f$ be a nonconstant function. The $\displaystyle\lim_{x\to a}{f(x)^{g(x)}}$ is an indeterminate form of type
+
+1.  $1^\infty$ if $\displaystyle\lim_{x\to a}{f(x)=1}$ and $\displaystyle\lim_{x\to a}{g(x)=+\infty}$ or $-\infty$.
+
+2.  $0^\infty$ if $\displaystyle\lim_{x\to a}{f(x)=0}$, through positive values, and $\displaystyle\lim_{x\to a}{g(x)=0}$.
+
+3.  $\infty ^0$ if $\displaystyle\lim_{x\to a}{f(x)=+\infty}$ and $\displaystyle\lim_{x\to a}{g(x)=0}$.
+
+Remark If $\displaystyle\lim_{x\to a}{f(x)^{g(x)}}$ is indeterminate of type $1^\infty$, $0^\infty$ and $\infty ^0$, we write
+
+$$
+\displaystyle\lim_{x\to a}{f(x)^{g(x)}}=\displaystyle\lim_{x\to a}{e^{g(x) \ln [f(x)]}}
+$$ and evaluate $\displaystyle\lim_{x\to a}{g(x) \ln [f(x)]}$ first. Then, if
+
+1.  $\displaystyle\lim_{x\to a}{g(x) \ln [f(x)]}=L \in R$, then $\displaystyle\lim_{x\to a}{f(x)^{g(x)}}=e^L$.
+
+2.  $\displaystyle\lim_{x\to a}{g(x) \ln [f(x)]}=+\infty$, then $\displaystyle\lim_{x\to a}{f(x)^{g(x)}}=+\infty$.
+
+3.  $\displaystyle\lim_{x\to a}{g(x) \ln [f(x)]}=-\infty$, then $\displaystyle\lim_{x\to a}{f(x)^{g(x)}}=0$.
+
+Example Evaluate the following limits.
+
+1.  $\displaystyle\lim_{x\to 0^+}{x^{\sin x}}$ $0^0$
+
+*Solution*
+
+First, write $x^{\sin x}=e^{\sin x \ln x}$. Evaluate first $\displaystyle\lim_{x\to 0^+}{\sin x \ln x}$.
+
+$$
+\begin{aligned}
+\displaystyle\lim_{x\to 0^+}{\sin x \ln x}\\&=\displaystyle\lim_{x\to 0^+}{\frac{\ln x}{\csc x}}\\&=\displaystyle\lim_{x\to 0^+}{\frac{\frac{1}{x}}{-\csc x \cot x}}\\&=\displaystyle\lim_{x\to 0^+}{\frac{-\sin^2 x}{x \cos x}}\\&=\displaystyle\lim_{x\to 0^+}{\frac{-2\sin x \cos x}{x(-\sin x)+\cos x}}\\&=0.
+\end{aligned}
+$$ Hence, $\displaystyle\lim_{x\to 0^+}{x^{\sin x}}=e^0=1$.
+
+2.  $\displaystyle\lim_{x\to +\infty}{\left(1-\frac{3}{x}\right)^{2x}}$ $1^\infty$
+
+*Solution*
+
+$\left(1-\frac{3}{x}\right)^{2x}=e^{2x\ln \left(1-\frac{3}{x}\right)}$
+
+$$
+\begin{aligned}
+\displaystyle\lim_{x\to +\infty}{2x ln \left(1-\frac{3}{2}\right)}\\
+&=\displaystyle\lim_{x\to +\infty}{\frac{ln \left(1-\frac{3}{x}\right)}{\frac{1}{2x}}}\\
+&=\displaystyle\lim_{x\to +\infty}\frac{{\frac{1}{1-\frac{3}{x}}}\cdot \left(\frac{3}{x^2}\right)}{-\frac{1}{2x^2}}\\
+&=\displaystyle\lim_{x\to +\infty}{\frac{-6}{1-\frac{3}{x}}}\\
+&=-6.
+\end{aligned}
+$$ Hence, $\displaystyle\lim_{x\to +\infty}{\left(1-\frac{3}{x}\right)^{2x}}=e^{-6}$.
